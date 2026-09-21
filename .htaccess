@@ -8,7 +8,9 @@ Options -Indexes
  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
  Header always set Cache-Control "no-store"
 </IfModule>
-<FilesMatch "^(README\.md|SECURITY\.md|\.htaccess|.*\.map|.*\.bak|.*~)$">Require all denied</FilesMatch>
+<FilesMatch "^(README\.md|SECURITY\.md|\.htaccess|.*\.map|.*\.bak|.*~)$">
+ Require all denied
+</FilesMatch>
 <IfModule mod_rewrite.c>
  RewriteEngine On
  RewriteRule ^tests(?:/|$) - [F,L]
